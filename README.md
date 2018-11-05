@@ -40,11 +40,18 @@ Android learning demo collection
 ![3](/screenshots/PagerSlidingTab/Screenshot_1541379671.png)
 ![4](/screenshots/PagerSlidingTab/Screenshot_1541379673.png)
 
+---
+
 ## 轮播Banner  
 
 Android广告图片轮播控件，支持无限循环和多种主题，可以灵活设置轮播样式、动画、轮播和切换时间、位置、图片加载框架等！ 
 
-![](/screenshots/Banner/banner.gif)
+![](/screenshots/Banner/Screenshot_1541401597.png)
+![](/screenshots/Banner/Screenshot_1541401598.png)
+![](/screenshots/Banner/Screenshot_1541401599.png)
+![](/screenshots/Banner/Screenshot_1541401608.png)
 
 ### 参考  
 1. [Android图片轮播控件](https://github.com/youth5201314/banner)  
+
+---
