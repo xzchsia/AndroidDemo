@@ -16,8 +16,8 @@ Android learning demo collection
 更新： 通过反射去掉了默认的切换效果，完美支持ViewPager联动。
 
 ### 参考
-[Android流行UI布局——底部导航BottomNavigationView+ViewPager+Fragment](https://www.jianshu.com/p/0ba25cc65889)
-[brucevanfdm-BottomNavigationView](https://github.com/brucevanfdm/BottomNavigationView)
+1. [Android流行UI布局——底部导航BottomNavigationView+ViewPager+Fragment](https://www.jianshu.com/p/0ba25cc65889)
+2. [BottomNavigationView](https://github.com/brucevanfdm/BottomNavigationView)
 
 ### Screenshots
 ![1](/screenshots/BottomNavigationView/Screenshot_1539261621.png)
@@ -29,9 +29,10 @@ Android learning demo collection
 
 ## PagerSlidingTab
 基于 PagerSlidingTabStrip源码地址：https://github.com/astuetz/PagerSlidingTabStrip
+使用 PagerSlidingTabStrip + ViewPager + Fragment
 
 ### 参考
-[PagerSlidingTabStrip从头到脚](https://www.jianshu.com/p/dfc83ea3d476)
+1. [PagerSlidingTabStrip从头到脚](https://www.jianshu.com/p/dfc83ea3d476)
 
 ### Screenshots
 ![1](/screenshots/PagerSlidingTab/Screenshot_1541379667.png)
