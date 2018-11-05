@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.androiddemo.BottomNavigation.BottomNavigationActivity;
+import com.example.androiddemo.banner.BannerActivity;
 import com.example.androiddemo.pagerslidingtab.PagerSlidingTabActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Button mBtnPagerSlidTab;
     private Button mBtnBtmNavi;
+    private Button mBtnBanner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
         OnClick onClick = new OnClick();
         mBtnPagerSlidTab = findViewById(R.id.btn_pager_slid_tab);
         mBtnBtmNavi = findViewById(R.id.btn_btm_navi);
+        mBtnBanner = findViewById(R.id.btn_banner);
 
         mBtnPagerSlidTab.setOnClickListener(onClick);
         mBtnBtmNavi.setOnClickListener(onClick);
+        mBtnBanner.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener {
@@ -44,8 +48,11 @@ public class MainActivity extends AppCompatActivity {
                     // 跳转到BottomNavigationActivity演示界面
                     intent = new Intent(MainActivity.this, BottomNavigationActivity.class);
                     break;
+                case R.id.btn_banner:
+                    // 跳转到Banner轮播演示界面
+                    intent = new Intent(MainActivity.this, BannerActivity.class);
+                    break;
             }
-
             startActivity(intent);
         }
     }
