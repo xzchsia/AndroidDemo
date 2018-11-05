@@ -15,13 +15,14 @@ Android learning demo collection
 
 更新： 通过反射去掉了默认的切换效果，完美支持ViewPager联动。
 
+### 参考
+[Android流行UI布局——底部导航BottomNavigationView+ViewPager+Fragment](https://www.jianshu.com/p/0ba25cc65889)
+[brucevanfdm-BottomNavigationView](https://github.com/brucevanfdm/BottomNavigationView)
+
 ### Screenshots
 ![1](/screenshots/BottomNavigationView/Screenshot_1539261621.png)
-
 ![2](/screenshots/BottomNavigationView/Screenshot_1539261625.png)
-
 ![3](/screenshots/BottomNavigationView/Screenshot_1539261627.png)
-
 ![4](/screenshots/BottomNavigationView/Screenshot_1539261629.png)
 
 ---
@@ -34,10 +35,7 @@ Android learning demo collection
 
 ### Screenshots
 ![1](/screenshots/PagerSlidingTab/Screenshot_1541379667.png)
-
 ![2](/screenshots/PagerSlidingTab/Screenshot_1541379669.png)
-
 ![3](/screenshots/PagerSlidingTab/Screenshot_1541379671.png)
-
 ![4](/screenshots/PagerSlidingTab/Screenshot_1541379673.png)
 
