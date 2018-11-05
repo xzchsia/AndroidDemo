@@ -1,8 +1,12 @@
 # AndroidDemo
 Android learning demo collection
 
+---
+
 ## MainActivity Screenshot
 ![1](/screenshots/Screenshot_main.png)
+
+---
 
 ## BottomNavigationDemo
 基于官方的BottomNavigationView 搭配 ViewPager + Fragment 使用；
@@ -21,7 +25,6 @@ Android learning demo collection
 ![4](/screenshots/BottomNavigationView/Screenshot_1539261629.png)
 
 ---
-
 
 ## PagerSlidingTab
 基于 PagerSlidingTabStrip源码地址：https://github.com/astuetz/PagerSlidingTabStrip
