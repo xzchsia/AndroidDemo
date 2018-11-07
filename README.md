@@ -55,3 +55,23 @@ Android广告图片轮播控件，支持无限循环和多种主题，可以灵�
 1. [Android图片轮播控件](https://github.com/youth5201314/banner)  
 
 ---
+
+## RecyclerView  
+
+RecyclerView用于在有限的窗口展现大量的数据，其实早已经有了类似的控件，如ListView、GridView，那么相比它们，RecyclerView有什么样优势呢？
+RecyclerView标准化了ViewHolder，而且异常的灵活，可以轻松实现ListView实现不了的样式和功能，通过布局管理器LayoutManager可控制Item的布局方式，通过设置Item操作动画自定义Item添加和删除的动画，通过设置Item之间的间隔样式，自定义间隔。
+
+- 设置布局管理器以控制Item的布局方式，横向、竖向以及瀑布流方式。  
+- 可设置Item操作的动画（删除或者添加等)  
+- 可设置Item的间隔样式（可绘制）  
+
+但是关于Item的点击和长按事件，需要用户自己去实现。  
+在使用RecyclerView时候，必须指定一个适配器Adapter和一个布局管理器LayoutManager。适配器继承RecyclerView.Adapter类。
+![](/screenshots/RecyclerView_1.png)
+
+### 参考 
+1. [RecyclerView使用完全指南，是时候体验新控件了](https://www.jianshu.com/p/4fc6164e4709)
+2. [Android RecyclerView 使用完全解析 体验艺术般的控件](https://blog.csdn.net/lmj623565791/article/details/45059587)
+
+
+---

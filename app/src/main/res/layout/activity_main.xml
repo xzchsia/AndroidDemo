@@ -33,7 +33,13 @@
                 android:id="@+id/btn_banner"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Banner演示"
+                android:text="Banner轮播演示"
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/btn_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="RecyclerView演示"
                 android:textAllCaps="false"/>
 
         </LinearLayout>

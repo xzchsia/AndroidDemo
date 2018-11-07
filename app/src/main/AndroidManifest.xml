@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".pagerslidingtab.PagerSlidingTabActivity" />
         <activity android:name=".BottomNavigation.BottomNavigationActivity" />
-        <activity android:name=".banner.BannerActivity"></activity>
+        <activity android:name=".banner.BannerActivity" />
+        <activity android:name=".recyclerview.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>
