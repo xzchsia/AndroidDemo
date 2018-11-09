@@ -66,12 +66,37 @@ RecyclerView标准化了ViewHolder，而且异常的灵活，可以轻松实现L
 - 可设置Item的间隔样式（可绘制）  
 
 但是关于Item的点击和长按事件，需要用户自己去实现。  
-在使用RecyclerView时候，必须指定一个适配器Adapter和一个布局管理器LayoutManager。适配器继承RecyclerView.Adapter类。
+在使用RecyclerView时候，必须指定一个适配器Adapter和一个布局管理器LayoutManager。适配器继承RecyclerView.Adapter类。  
 ![](/screenshots/RecyclerView_1.png)
 
 ### 参考 
 1. [RecyclerView使用完全指南，是时候体验新控件了](https://www.jianshu.com/p/4fc6164e4709)
 2. [Android RecyclerView 使用完全解析 体验艺术般的控件](https://blog.csdn.net/lmj623565791/article/details/45059587)
 
+---
+
+## SwipeRefreshLayout + RecyclerView 上拉加载，下拉刷新  
+SwipeRefrshLayout是Google官方更新的一个Widget,可以实现下拉刷新的效果。  
+- setOnRefreshListener(OnRefreshListener):添加下拉刷新监听器  
+- setRefreshing(boolean):显示或者隐藏刷新进度条  
+- isRefreshing():检查是否处于刷新状态  
+- setColorSchemeResources():设置进度条的颜色主题，最多设置四种，以前的setColorScheme()方法已经弃用了。  
+
+RecyclerView设置滚动事件加入上拉加载更多功能  
+LayoutManger给我们提供了以下几个方法来让开发者方便的获取到屏幕上面的顶部item和顶部item相关的信息:  
+
+- findFirstVisibleItemPosition()
+- findFirstCompletlyVisibleItemPosition()
+- findLastVisibleItemPosition()
+- findLastCompletlyVisibleItemPosition()  
+
+同时通过Recycler.Adapter的getItemCount()方法可以轻松获取到RecyclerView列表中Item View的个数。
+那么通过监听滑动(滚动)事件addOnScrollListener，然后在里边判断是否已经滑动到最底部来加载更多的数据.  
+
+
+### 参考 
+1. [RecyclerView完全解析之下拉刷新与上拉加载SwipeRefreshLayout](https://www.kancloud.cn/digest/fastdev4android/109670)  
+
 
 ---
+

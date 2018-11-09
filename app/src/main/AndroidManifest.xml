@@ -22,7 +22,8 @@
         <activity android:name=".pagerslidingtab.PagerSlidingTabActivity" />
         <activity android:name=".BottomNavigation.BottomNavigationActivity" />
         <activity android:name=".banner.BannerActivity" />
-        <activity android:name=".recyclerview.RecyclerViewActivity"></activity>
+        <activity android:name=".recyclerview.RecyclerViewActivity" />
+        <activity android:name=".swiperefreshlayout.SwipeRefreshLayoutActivity"></activity>
     </application>
 
 </manifest>
