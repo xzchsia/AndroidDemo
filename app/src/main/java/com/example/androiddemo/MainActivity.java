@@ -11,6 +11,7 @@ import com.example.androiddemo.banner.BannerActivity;
 import com.example.androiddemo.pagerslidingtab.PagerSlidingTabActivity;
 import com.example.androiddemo.recyclerview.RecyclerViewActivity;
 import com.example.androiddemo.swiperefreshlayout.SwipeRefreshLayoutActivity;
+import com.example.androiddemo.tablayout.TabLayoutActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Button mBtnPagerSlidTab;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnBanner;
     private Button mBtnRecyclerView;
     private Button mBtnSwipeRefreshLayout;
+    private Button mBtnTableLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +36,14 @@ public class MainActivity extends AppCompatActivity {
         mBtnBanner = findViewById(R.id.btn_banner);
         mBtnRecyclerView = findViewById(R.id.btn_recyclerview);
         mBtnSwipeRefreshLayout = findViewById(R.id.btn_swiperefresh);
+        mBtnTableLayout = findViewById(R.id.btn_tab_layout);
 
         mBtnPagerSlidTab.setOnClickListener(onClick);
         mBtnBtmNavi.setOnClickListener(onClick);
         mBtnBanner.setOnClickListener(onClick);
         mBtnRecyclerView.setOnClickListener(onClick);
         mBtnSwipeRefreshLayout.setOnClickListener(onClick);
+        mBtnTableLayout.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener {
@@ -67,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_swiperefresh:
                     // 跳转到SwipeRefreshLayout演示界面
                     intent = new Intent(MainActivity.this, SwipeRefreshLayoutActivity.class);
+                    break;
+                case R.id.btn_tab_layout:
+                    // 跳转到TabLayout演示界面
+                    intent = new Intent(MainActivity.this, TabLayoutActivity.class);
                     break;
             }
             startActivity(intent);

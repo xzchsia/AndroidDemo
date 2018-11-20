@@ -97,6 +97,20 @@ LayoutManger给我们提供了以下几个方法来让开发者方便的获取�
 ### 参考 
 1. [RecyclerView完全解析之下拉刷新与上拉加载SwipeRefreshLayout](https://www.kancloud.cn/digest/fastdev4android/109670)  
 
-
 ---
+
+## TabLayout 实现顶部标签栏
+通常在ViewPager的上方，我们都会放一个标签指示器与ViewPager进行联动。
+以前，我们大多使用的是GitHub上的开源框架PagerSlidingTabTrip，
+具体的可以参见https://github.com/astuetz/PagerSlidingTabStrip。
+而现在，我们可以使用Android自带的控件TabLayout来实现这个效果了，
+而且TabLayout更为强大，因为Tab标签可以使用自定义View。
+
+通过TabLayout+ViewPager来展示顶部标题栏。使用官方的support:design支持库
+
+![](/screenshots/tablayout/Screenshot_1542698461.png)
+![](/screenshots/tablayout/Screenshot_1542698468.png)
+
+### 参考
+1. [Tablayout使用全解，一篇就够了](https://www.jianshu.com/p/fde38f367019)
 

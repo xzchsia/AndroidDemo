@@ -8,7 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,33 +20,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="PagerSlidingTabStrip演示"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn_btm_navi"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="BottomNavigation演示"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn_banner"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Banner轮播演示"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/btn_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="RecyclerView演示"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/btn_swiperefresh"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="SwipeRefreshLayout演示"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="官方TabLayout演示"
+                android:textAllCaps="false" />
 
         </LinearLayout>
     </ScrollView>
