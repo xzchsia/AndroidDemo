@@ -91,9 +91,15 @@ LayoutManger给我们提供了以下几个方法来让开发者方便的获取�
 - findLastCompletlyVisibleItemPosition()  
 
 同时通过Recycler.Adapter的getItemCount()方法可以轻松获取到RecyclerView列表中Item View的个数。
-那么通过监听滑动(滚动)事件addOnScrollListener，然后在里边判断是否已经滑动到最底部来加载更多的数据.  
+那么通过监听滑动(滚动)事件addOnScrollListener，然后在里边判断是否已经滑动到最底部来加载更多的数据.
 
+升级SwipeRefreshLayout+RecyclerView加入FootView实现上拉加载
 
+![](/screenshots/SwipeRefreshLayout/Screenshot_1542954278.png)
+![](/screenshots/SwipeRefreshLayout/Screenshot_1542954280.png)
+
+![](/screenshots/SwipeRefreshLayout/Screenshot_1542954289.png)
+![](/screenshots/SwipeRefreshLayout/Screenshot_1542954292.png)
 ### 参考 
 1. [RecyclerView完全解析之下拉刷新与上拉加载SwipeRefreshLayout](https://www.kancloud.cn/digest/fastdev4android/109670)  
 

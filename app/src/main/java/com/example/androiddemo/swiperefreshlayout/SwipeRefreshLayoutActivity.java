@@ -87,8 +87,11 @@ public class SwipeRefreshLayoutActivity extends AppCompatActivity {
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 //滚动状态变化时回调
                 super.onScrollStateChanged(recyclerView, newState);
+//                Log.d("111111", "lastVisibleItem:"+lastVisibleItem+"getItemCount:"+recyclerViewAdapter.getItemCount());
+
                 if (newState == RecyclerView.SCROLL_STATE_IDLE
                         && lastVisibleItem + 1 == recyclerViewAdapter.getItemCount()) {
+                    recyclerViewAdapter.changeMoreStatus(RecyclerViewAdapter.LOADING_MORE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -97,7 +100,10 @@ public class SwipeRefreshLayoutActivity extends AppCompatActivity {
                                 data.add("more item:" + i);
                             }
                             recyclerViewAdapter.addMoreItem(data);
-                            Toast.makeText(SwipeRefreshLayoutActivity.this, "加载数据", Toast.LENGTH_SHORT).show();
+
+                            recyclerViewAdapter.changeMoreStatus(RecyclerViewAdapter.PULLUP_LOAD_MORE);
+                            //Toast.makeText(SwipeRefreshLayoutActivity.this, "加载数据", Toast.LENGTH_SHORT).show();
+                            swipeRefreshLayout.setRefreshing(false);
                         }
                     }, 1000);
                 }

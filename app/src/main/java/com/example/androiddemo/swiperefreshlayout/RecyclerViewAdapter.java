@@ -12,9 +12,18 @@ import com.example.androiddemo.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     // 数据展示
     private List<String> mData;
+    //上拉加载更多
+    public static final int PULLUP_LOAD_MORE = 0;
+    //正在加载中
+    public static final int LOADING_MORE = 1;
+    //上拉加载更多状态-默认为0
+    private int load_more_status = 0;
+
+    private static final int TYPE_ITEM = 0;  //普通Item View
+    private static final int TYPE_FOOTER = 1;  //顶部FootView
 
     // Item点击事件回调监听
     public interface IOnItemClickListener {
@@ -57,16 +66,36 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item, parent, false);
-        return (new ViewHolder(view));
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        if (viewType == TYPE_ITEM) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item, parent, false);
+            return (new ItemViewHolder(view));
+        } else if (viewType == TYPE_FOOTER) {
+            View footView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_load_more_layout, parent, false);
+            return (new FootViewHolder(footView));
+        }
+
+        return null;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, final int position) {
         // 绑定数据
-        holder.mTv.setText(mData.get(position));
-//        holder.itemView.setTag(position);
+        if (holder instanceof ItemViewHolder) {
+            ((ItemViewHolder) holder).mTv.setText(mData.get(position));
+            holder.itemView.setTag(position);
+        } else if (holder instanceof FootViewHolder) {
+            FootViewHolder footViewHolder = (FootViewHolder) holder;
+            switch (load_more_status) {
+                case PULLUP_LOAD_MORE:
+                    footViewHolder.foot_view_item_tv.setText("上拉加载更多...");
+                    break;
+                case LOADING_MORE:
+                    footViewHolder.foot_view_item_tv.setText("正在加载更多数据...");
+                    break;
+            }
+        }
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,19 +120,54 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         });
     }
 
+    //重写getItemCount()方法,返回的Item数量在数据的基础上面+1，增加一项FootView布局项
     @Override
     public int getItemCount() {
-        return null == mData ? 0 : mData.size();
+        return null == mData ? 0 : mData.size() + 1;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ItemViewHolder extends RecyclerView.ViewHolder {
         private TextView mTv;
 
-        public ViewHolder(View itemView) {
+        public ItemViewHolder(View itemView) {
             super(itemView);
             mTv = itemView.findViewById(R.id.rv_item_tv);
         }
     }
 
+    public static class FootViewHolder extends RecyclerView.ViewHolder {
+        private TextView foot_view_item_tv;
 
+        public FootViewHolder(View itemView) {
+            super(itemView);
+            foot_view_item_tv = (TextView) itemView.findViewById(R.id.foot_view_item_tv);
+        }
+    }
+
+    //重写getItemViewType方法来判断返回加载的布局的类型
+    @Override
+    public int getItemViewType(int position) {
+        //return super.getItemViewType(position);
+        // 最后一个item设置为footerView
+        if (position + 1 == getItemCount()) {
+            return TYPE_FOOTER;
+        } else {
+            return TYPE_ITEM;
+        }
+    }
+
+    /**
+     * //上拉加载更多
+     * PULLUP_LOAD_MORE=0;
+     * //正在加载中
+     * LOADING_MORE=1;
+     * //加载完成已经没有更多数据了
+     * NO_MORE_DATA=2;
+     *
+     * @param status
+     */
+    public void changeMoreStatus(int status) {
+        load_more_status = status;
+        notifyDataSetChanged();
+    }
 }
