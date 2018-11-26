@@ -56,6 +56,12 @@
                 android:layout_height="40dp"
                 android:text="官方TabLayout演示"
                 android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn_act_return_result"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="startActivityForResult演示"
+                android:textAllCaps="false" />
 
         </LinearLayout>
     </ScrollView>

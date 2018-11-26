@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".startActivityForResult.StartForResultActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_sfr_click"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="点击跳转"/>
+    <TextView
+        android:id="@+id/tv_sfr_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="This is First Activity"
+        android:gravity="center"/>
+
+</LinearLayout>

@@ -10,6 +10,7 @@ import com.example.androiddemo.BottomNavigation.BottomNavigationActivity;
 import com.example.androiddemo.banner.BannerActivity;
 import com.example.androiddemo.pagerslidingtab.PagerSlidingTabActivity;
 import com.example.androiddemo.recyclerview.RecyclerViewActivity;
+import com.example.androiddemo.startActivityForResult.StartForResultActivity;
 import com.example.androiddemo.swiperefreshlayout.SwipeRefreshLayoutActivity;
 import com.example.androiddemo.tablayout.TabLayoutActivity;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnRecyclerView;
     private Button mBtnSwipeRefreshLayout;
     private Button mBtnTableLayout;
+    private Button mBtnStartForResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnRecyclerView = findViewById(R.id.btn_recyclerview);
         mBtnSwipeRefreshLayout = findViewById(R.id.btn_swiperefresh);
         mBtnTableLayout = findViewById(R.id.btn_tab_layout);
+        mBtnStartForResult = findViewById(R.id.btn_act_return_result);
 
         mBtnPagerSlidTab.setOnClickListener(onClick);
         mBtnBtmNavi.setOnClickListener(onClick);
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnRecyclerView.setOnClickListener(onClick);
         mBtnSwipeRefreshLayout.setOnClickListener(onClick);
         mBtnTableLayout.setOnClickListener(onClick);
+        mBtnStartForResult.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener {
@@ -75,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_tab_layout:
                     // 跳转到TabLayout演示界面
                     intent = new Intent(MainActivity.this, TabLayoutActivity.class);
+                    break;
+                case R.id.btn_act_return_result:
+                    // 跳转到TabLayout演示界面
+                    intent = new Intent(MainActivity.this, StartForResultActivity.class);
                     break;
             }
             startActivity(intent);

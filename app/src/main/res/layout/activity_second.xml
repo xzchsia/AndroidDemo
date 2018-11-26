@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".startActivityForResult.SecondActivity">
+    
+    <Button
+        android:id="@+id/btn_sfr_return"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="点击返回主Activity"
+        android:textAllCaps="false"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="This is second Activity"
+        android:layout_marginTop="60dp"
+        android:gravity="center"/>
+
+</android.support.constraint.ConstraintLayout>

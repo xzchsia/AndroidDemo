@@ -24,7 +24,9 @@
         <activity android:name=".banner.BannerActivity" />
         <activity android:name=".recyclerview.RecyclerViewActivity" />
         <activity android:name=".swiperefreshlayout.SwipeRefreshLayoutActivity" />
-        <activity android:name=".tablayout.TabLayoutActivity"></activity>
+        <activity android:name=".tablayout.TabLayoutActivity" />
+        <activity android:name=".startActivityForResult.StartForResultActivity" />
+        <activity android:name=".startActivityForResult.SecondActivity"></activity>
     </application>
 
 </manifest>
