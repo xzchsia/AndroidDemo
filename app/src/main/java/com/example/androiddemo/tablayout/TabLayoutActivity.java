@@ -26,8 +26,8 @@ public class TabLayoutActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tab_layout_container);
         viewPager = findViewById(R.id.tab_layout_viewpager);
 
-        viewPager.setAdapter(tabLayoutAdapter = new TabLayoutAdapter(getSupportFragmentManager()));
-        viewPager.setOffscreenPageLimit(tabLayoutAdapter.getCount() - 1);
+        setupViewPager(viewPager);
+
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -46,5 +46,17 @@ public class TabLayoutActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void setupViewPager(ViewPager viewPager) {
+        TabLayoutAdapter adapter = new TabLayoutAdapter(getSupportFragmentManager());
+        String[] titleFragment = new String[]{"推荐", "热点", "视频", "社会", "图片", "娱乐", "科技", "汽车"};
+        for (int i=0; i< titleFragment.length; ++i) {
+            adapter.addFragment(TabLayoutFragment.newInstance(titleFragment[i]));
+        }
+
+        viewPager.setAdapter(adapter);
+        //设置预加载页面的数目，避免当页面个数 > 3时，有Fragment被销毁的情况
+        viewPager.setOffscreenPageLimit(adapter.getCount() - 1);
     }
 }
