@@ -114,11 +114,14 @@ LayoutManger给我们提供了以下几个方法来让开发者方便的获取�
 
 通过TabLayout+ViewPager来展示顶部标题栏。使用官方的support:design支持库
 
+新增ViewPager+TabLayout+Fragment 懒加载机制
+
 ![](/screenshots/tablayout/Screenshot_1542698461.png)
 ![](/screenshots/tablayout/Screenshot_1542698468.png)
 
 ### 参考
 1. [Tablayout使用全解，一篇就够了](https://www.jianshu.com/p/fde38f367019)
+2. [ViewPager+TabLayout+Fragment 懒加载机制](https://cdn2.jianshu.io/p/0eaa65e5bad2)
 
 ---
 
