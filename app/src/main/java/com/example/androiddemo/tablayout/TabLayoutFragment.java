@@ -3,6 +3,7 @@ package com.example.androiddemo.tablayout;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,10 @@ import com.example.androiddemo.R;
  * Use the {@link TabLayoutFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TabLayoutFragment extends Fragment {
-
+public class TabLayoutFragment extends LazyLoadFragment {
+private final static String TAG = "TabLayoutFragment";
     private TextView textView = null;
-    private View view = null;
+    private View mView = null;
     private static final String ARG_PARAM1 = "title";
 
     private String mParam1;
@@ -53,22 +54,40 @@ public class TabLayoutFragment extends Fragment {
         }
     }
 
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//
+//        if (mView == null) {
+//            mView = inflater.inflate(R.layout.fragment_tab_layout, container, false);
+//            //在这里做一些初始化处理
+//            textView = (TextView) mView.findViewById(R.id.tab_layout_textview);
+//            textView.setText(mParam1);
+//        } else {
+//            ViewGroup viewGroup = (ViewGroup) mView.getParent();
+//            if (viewGroup != null)
+//                viewGroup.removeView(mView);
+//        }
+//
+//        return mView;
+//    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    protected int getLayoutId() {
+        return R.layout.fragment_tab_layout;
+    }
 
-        if (view == null) {
-            view = inflater.inflate(R.layout.fragment_tab_layout, container, false);
-            //在这里做一些初始化处理
-            textView = (TextView) view.findViewById(R.id.tab_layout_textview);
-            textView.setText(mParam1);
-        } else {
-            ViewGroup viewGroup = (ViewGroup) view.getParent();
-            if (viewGroup != null)
-                viewGroup.removeView(view);
-        }
+    @Override
+    protected void init(View view) {
+        this.mView = view;
+        initRes();
+    }
 
-        return view;
+    private void initRes() {
+        //在这里做一些初始化处理
+        textView = (TextView) mView.findViewById(R.id.tab_layout_textview);
+        textView.setText(mParam1);
+        Log.d(TAG, "------>current fragment "+mParam1);
     }
 
 }

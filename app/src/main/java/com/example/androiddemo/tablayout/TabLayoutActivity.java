@@ -12,6 +12,7 @@ public class TabLayoutActivity extends AppCompatActivity {
     private final static String TAG = "TabLayoutActivity";
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    TabLayoutAdapter tabLayoutAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +26,14 @@ public class TabLayoutActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tab_layout_container);
         viewPager = findViewById(R.id.tab_layout_viewpager);
 
-        viewPager.setAdapter(new TabLayoutAdapter(getSupportFragmentManager()));
+        viewPager.setAdapter(tabLayoutAdapter = new TabLayoutAdapter(getSupportFragmentManager()));
+        viewPager.setOffscreenPageLimit(tabLayoutAdapter.getCount() - 1);
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                Log.d(TAG,"======>onTabSelected:"+tab.getText());
+//                Log.d(TAG,"======>onTabSelected:"+tab.getText());
             }
 
             @Override
